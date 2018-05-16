@@ -18,11 +18,9 @@ class App extends Component {
 
   thisTesty() {
     console.log(this);
-    debugger;
   }
 
   clickHandler = () => {
-    debugger;
     const names = this.state.names;
     names[0] = 'teststtstttstttststststststst';
 
