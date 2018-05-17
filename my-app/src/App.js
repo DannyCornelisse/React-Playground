@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Person from './components/Person/Person';
+import { Switch, Route, Link } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Test from './components/Test/Test';
 
-const names = ['hi', 'bla'];
 
 class App extends Component {
-  something = 'hello from something';
-  vm = this;
-  state = {
-    names
-  };
-  constructor() {
-    super();
-    this.thisTesty();
+
+  componentWillMount() {
+    console.log('component will mount');
   }
 
-  thisTesty() {
-    console.log(this);
+  componentDidMount() {
+    console.log('component mounted');
   }
 
-  clickHandler = () => {
-    const names = this.state.names;
-    names[0] = 'teststtstttstttststststststst';
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // If we have a snapshot value, we've just added new items.
+    // Adjust scroll so these new items don't push the old ones out of view.
+    // (snapshot here is the value returned from getSnapshotBeforeUpdate)
 
-    this.setState({ names });
   }
+
 
   render() {
     return (
@@ -35,13 +32,18 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
           <p>{this.something}</p>
         </header>
-        <button onClick={this.clickHandler}>clickssssss</button>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>hello!!!!!!!!!</p>
-        {this.state.names.map(name => <Person key={name} name={name} />)}
-        <Person>hello from child</Person>
+        <nav className="navbar navbar-light">
+          <ul className="nav navbar-nav">
+            <li><Link to="/home">Homes</Link></li>
+            <li><Link to="/test">Test</Link></li>
+
+          </ul>
+       </nav>
+
+      <Switch>
+        <Route path="/home" component={Home}/>
+        <Route path="/test" component={Test}/>
+      </Switch>
       </div>
     );
     // return React.createElement('div', null, React.createElement('h1', {className: 'app'}, 'hello from h1'));
