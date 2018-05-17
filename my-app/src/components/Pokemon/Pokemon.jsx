@@ -17,7 +17,6 @@ class Pokemon extends Component {
 
     componentDidMount() {
         axios.get('https://pokeapi.co/api/v2/pokemon/1/').then((res) => {
-            debugger;
             this.addPokemon(res.data);
         })
     }
