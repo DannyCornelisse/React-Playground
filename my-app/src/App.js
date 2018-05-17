@@ -4,6 +4,7 @@ import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Test from './components/Test/Test';
+import Pokemon from './components/Pokemon/Pokemon';
 
 
 class App extends Component {
@@ -36,13 +37,14 @@ class App extends Component {
           <ul className="nav navbar-nav">
             <li><Link to="/home">Homes</Link></li>
             <li><Link to="/test">Test</Link></li>
-
+            <li><Link to="/pokemon">Pokemon</Link></li>
           </ul>
        </nav>
 
       <Switch>
         <Route path="/home" component={Home}/>
         <Route path="/test" component={Test}/>
+        <Route path="/pokemon" component={Pokemon}/>
       </Switch>
       </div>
     );
