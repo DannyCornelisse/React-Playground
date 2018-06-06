@@ -14,6 +14,7 @@ class Person extends Component {
         return (
             <div>
                 <h2 onClick={this.clicky}>hello {this.props.name} ++ {this.test}</h2>
+                {this.props.test} {this.props.bla}
                 <button onClick={this.clicky}>click meeeee</button>
                 <h1>{this.props.children}</h1>
             </div>

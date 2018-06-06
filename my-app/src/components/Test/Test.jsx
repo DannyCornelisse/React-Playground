@@ -33,7 +33,7 @@ class Test extends Component {
                 To get started, edit <code>src/App.js</code> and save to reload.
                 </p>
                 <p>hello!!!!!!!!!</p>
-                {this.state.names.map(name => <Person key={name} name={name} />)}
+                { this.state.names.map(name => <Person test={'Danny'} key={name} name={name} />) }
                 <Person>hello from child</Person>
             </div>
         );
